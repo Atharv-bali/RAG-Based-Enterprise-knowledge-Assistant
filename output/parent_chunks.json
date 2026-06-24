@@ -1,0 +1,62 @@
+[
+    {
+        "parent_id": "p1",
+        "text": "This is a test document. Artificial Intelligence is transforming enterprises. RAG systems combine retrieval and generation. Lorem Ipsum is simply"
+    },
+    {
+        "parent_id": "p2",
+        "text": "dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966,"
+    },
+    {
+        "parent_id": "p3",
+        "text": "when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero"
+    },
+    {
+        "parent_id": "p4",
+        "text": "translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades,"
+    },
+    {
+        "parent_id": "p5",
+        "text": "but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently"
+    },
+    {
+        "parent_id": "p6",
+        "text": "with desktop publishing software including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text."
+    },
+    {
+        "parent_id": "p7",
+        "text": "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard"
+    },
+    {
+        "parent_id": "p8",
+        "text": "McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from"
+    },
+    {
+        "parent_id": "p9",
+        "text": "a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem"
+    },
+    {
+        "parent_id": "p10",
+        "text": "Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by"
+    },
+    {
+        "parent_id": "p11",
+        "text": "Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance."
+    },
+    {
+        "parent_id": "p12",
+        "text": "The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32. The standard"
+    },
+    {
+        "parent_id": "p13",
+        "text": "chunk of Lorem Ipsum used since 1966 is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus"
+    },
+    {
+        "parent_id": "p14",
+        "text": "Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914"
+    },
+    {
+        "parent_id": "p15",
+        "text": "translation by H. Rackham."
+    }
+]
