@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Knowledge Assistant</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0f172a; /* Slate 900 */
+            --bg-surface: #1e293b; /* Slate 800 */
+            --bg-card: #334155; /* Slate 700 */
+            --text-main: #f8fafc; /* Slate 50 */
+            --text-muted: #94a3b8; /* Slate 400 */
+            
+            --primary: #6366f1; /* Indigo 500 */
+            --primary-glow: rgba(99, 102, 241, 0.15);
+            --primary-hover: #4f46e5; /* Indigo 600 */
+            
+            --success: #10b981; /* Emerald 500 */
+            --success-glow: rgba(16, 185, 129, 0.15);
+            
+            --warning: #f59e0b; /* Amber 500 */
+            --warning-glow: rgba(245, 158, 11, 0.15);
+            
+            --danger: #ef4444; /* Red 500 */
+            --danger-glow: rgba(239, 68, 68, 0.15);
+            
+            --border: rgba(148, 163, 184, 0.1);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* App Layout Grid */
+        .app-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: var(--bg-surface);
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            overflow-y: auto;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        .logo-text h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #ffffff, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* System Health Widget */
+        .health-card {
+            background-color: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .health-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .health-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-green {
+            background-color: var(--success);
+            box-shadow: 0 0 8px var(--success);
+            animation: pulse 1.8s infinite;
+        }
+
+        .dot-red {
+            background-color: var(--danger);
+            box-shadow: 0 0 8px var(--danger);
+        }
+
+        .dot-orange {
+            background-color: var(--warning);
+            box-shadow: 0 0 8px var(--warning);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        /* Metrics Widget */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .metric-tile {
+            background-color: rgba(30, 41, 59, 0.3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .metric-tile .label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .metric-tile .value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* Main Chat Area */
+        .chat-area {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: var(--bg-base);
+            position: relative;
+        }
+
+        /* Header */
+        .chat-header {
+            height: 70px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .header-title h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .header-title p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Conversation Container */
+        .messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            display: flex;
+            gap: 16px;
+            max-width: 80%;
+            animation: fadeIn 0.3s var(--transition);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message.assistant {
+            align-self: flex-start;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .message.user .avatar {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .message.assistant .avatar {
+            background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
+            border: 1px solid var(--border);
+            color: #c084fc;
+        }
+
+        .bubble {
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            line-height: 1.5;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        .message.user .bubble {
+            background-color: var(--primary);
+            color: white;
+            border-top-right-radius: 0;
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        .message.assistant .bubble {
+            background-color: var(--bg-surface);
+            color: var(--text-main);
+            border-top-left-radius: 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.pass {
+            background-color: var(--success-glow);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .status-badge.failed {
+            background-color: var(--danger-glow);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* Suggested Prompts (Empty State) */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            gap: 28px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .empty-state-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 28px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .empty-state h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .empty-state p {
+            color: var(--text-muted);
+            font-size: 13px;
+            max-width: 400px;
+        }
+
+        .prompt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 280px);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .prompt-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .prompt-card:hover {
+            border-color: var(--primary);
+            background-color: rgba(99, 102, 241, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .prompt-card h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .prompt-card p {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Input Controls Area */
+        .input-area {
+            padding: 24px 32px 32px 32px;
+            background-color: linear-gradient(to top, var(--bg-base) 80%, transparent);
+        }
+
+        .input-wrapper {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 8px 8px 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .input-wrapper:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .chat-input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            padding: 8px 0;
+            resize: none;
+            height: 24px;
+            max-height: 120px;
+        }
+
+        .send-button {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            background-color: var(--primary);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .send-button:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.03);
+        }
+
+        .send-button:disabled {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Loading indicator styling */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px;
+        }
+
+        .typing-indicator span {
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-muted);
+            border-radius: 50%;
+            display: inline-block;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        /* Scrollbar customizing */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(148, 163, 184, 0.4);
+        }
+
+        /* SVG icons */
+        .icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Sidebar: Health check and System Metrics -->
+        <aside class="sidebar">
+            
+            <div class="logo-section">
+                <div class="logo-icon">E</div>
+                <div class="logo-text">
+                    <h1>Enterprise RAG</h1>
+                    <p>Self-Correcting Assistant</p>
+                </div>
+            </div>
+
+            <!-- Health Status -->
+            <div class="sidebar-section">
+                <h2>System Health</h2>
+                <div class="health-card">
+                    <div class="health-row">
+                        <span>Overall Status:</span>
+                        <span id="overall-status" class="health-indicator">
+                            <span class="indicator-dot dot-orange"></span> Checking...
+                        </span>
+                    </div>
+                    <div class="health-row" style="opacity: 0.8; font-size: 12px; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 4px;">
+                        <span>Ollama Service:</span>
+                        <span id="health-ollama">--</span>
+                    </div>
+                    <div class="health-row" style="opacity: 0.8; font-size: 12px;">
+                        <span>Vector Index Data:</span>
+                        <span id="health-vectorstore">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="sidebar-section">
+                <h2>Operational Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-tile">
+                        <span class="label">Uptime</span>
+                        <span class="value" id="metric-uptime">0s</span>
+                    </div>
+                    <div class="metric-tile">
+                        <span class="label">Total Queries</span>
+                        <span class="value" id="metric-queries">0</span>
+                    </div>
+                    <div class="metric-tile">
+                        <span class="label">Avg Processing Time</span>
+                        <span class="value" id="metric-latency">0s</span>
+                    </div>
+                    <div class="metric-tile">
+                        <span class="label">Success Rate</span>
+                        <span class="value" id="metric-success">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Document -->
+            <div class="sidebar-section">
+                <h2>Upload Knowledge Base</h2>
+                <div style="background-color: rgba(255, 255, 255, 0.02); border: 1px dashed var(--border); padding: 14px; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
+                    <div style="font-size: 12px; color: var(--text-muted); text-align: center; line-height: 1.4;">
+                        Upload PDF documents to parse and ingest automatically.
+                    </div>
+                    <input 
+                        type="file" 
+                        id="pdf-input" 
+                        accept=".pdf"
+                        style="display: none;"
+                        onchange="handleFileSelect(this)"
+                    >
+                    <button 
+                        type="button" 
+                        onclick="document.getElementById('pdf-input').click()"
+                        style="width: 100%; padding: 8px; background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary); border-radius: var(--radius-sm); color: var(--text-main); font-weight: 500; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);"
+                        onmouseover="this.style.background='var(--primary)'"
+                        onmouseout="this.style.background='rgba(99, 102, 241, 0.1)'"
+                    >
+                        Choose PDF File
+                    </button>
+                    <div id="selected-file-name" style="font-size: 11px; text-align: center; color: var(--text-muted); word-break: break-all;">No file chosen</div>
+                    <button 
+                        type="button" 
+                        id="upload-btn" 
+                        onclick="uploadSelectedPDF()"
+                        disabled
+                        style="width: 100%; padding: 8px; background: var(--bg-card); border: none; border-radius: var(--radius-sm); color: var(--text-muted); font-weight: 600; font-size: 12px; cursor: not-allowed; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);"
+                    >
+                        Upload and Ingest
+                    </button>
+                    <div id="upload-status-text" style="font-size: 11px; text-align: center; font-weight: 500;"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: auto; font-size: 11px; text-align: center; color: var(--text-muted); opacity: 0.6;">
+                Production API Gateway &bull; v1.0.0
+            </div>
+
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="header-title">
+                    <h2>RAG Assistant Chat</h2>
+                    <p>Powered by LLaMA 3.2 & Qdrant hybrid retrieval</p>
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted);">
+                    Server: <span style="font-family: monospace; color: var(--text-main);">127.0.0.1:8000</span>
+                </div>
+            </header>
+
+            <!-- Chat Content / Messages -->
+            <div id="messages-container" class="messages-container">
+                
+                <!-- Initial Empty State -->
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-state-icon">
+                        <svg class="icon" viewBox="0 0 24 24" style="width: 28px; height: 28px;">
+                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>How can I assist you today?</h3>
+                        <p>Ask queries against your enterprise documents. The assistant automatically evaluates answers and retries if factual support is missing.</p>
+                    </div>
+                    
+                    <div class="prompt-grid">
+                        <div class="prompt-card" onclick="selectPrompt('Artificial Intelligence is transforming enterprises.')">
+                            <h4>Enterprise AI</h4>
+                            <p>"Artificial Intelligence is transforming enterprises..."</p>
+                        </div>
+                        <div class="prompt-card" onclick="selectPrompt('What do RAG systems combine?')">
+                            <h4>RAG Systems</h4>
+                            <p>Query what components are combined in RAG architectures.</p>
+                        </div>
+                        <div class="prompt-card" onclick="selectPrompt('From where did Lorem Ipsum come?')">
+                            <h4>Lorem Ipsum Origin</h4>
+                            <p>Verify historical facts about Cicero's classical literature.</p>
+                        </div>
+                        <div class="prompt-card" onclick="selectPrompt('Where was James Mosley a librarian?')">
+                            <h4>James Mosley Library</h4>
+                            <p>Search for specific information about the St Bride Printing Library.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Input area -->
+            <div class="input-area">
+                <form id="chat-form" onsubmit="submitQuery(event)">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="query-input" 
+                            class="chat-input" 
+                            placeholder="Type a question (min 1, max 1000 characters)..." 
+                            autocomplete="off"
+                        >
+                        <button type="submit" id="send-btn" class="send-button">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+        const messagesContainer = document.getElementById('messages-container');
+        const emptyState = document.getElementById('empty-state');
+        const queryInput = document.getElementById('query-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Initial setup on window load
+        window.addEventListener('DOMContentLoaded', () => {
+            pollHealth();
+            pollMetrics();
+            
+            // Poll health every 10 seconds, metrics every 5 seconds
+            setInterval(pollHealth, 10000);
+            setInterval(pollMetrics, 5000);
+        });
+
+        function selectPrompt(promptText) {
+            queryInput.value = promptText;
+            queryInput.focus();
+        }
+
+        // Fetch metrics endpoint
+        async function pollMetrics() {
+            try {
+                const response = await fetch('/metrics');
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('metric-uptime').innerText = formatUptime(data.uptime_seconds);
+                    document.getElementById('metric-queries').innerText = data.total_requests;
+                    document.getElementById('metric-latency').innerText = data.average_latency_seconds.toFixed(3) + 's';
+                    
+                    const successRate = data.total_requests > 0 
+                        ? Math.round((data.successful_requests / data.total_requests) * 100)
+                        : 100;
+                    document.getElementById('metric-success').innerText = successRate + '%';
+                }
+            } catch (err) {
+                console.error("Failed to poll metrics:", err);
+            }
+        }
+
+        // Fetch health endpoint
+        async function pollHealth() {
+            try {
+                const response = await fetch('/health');
+                const overallStatus = document.getElementById('overall-status');
+                const ollamaStatus = document.getElementById('health-ollama');
+                const vectorStatus = document.getElementById('health-vectorstore');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.status === 'healthy') {
+                        overallStatus.innerHTML = '<span class="indicator-dot dot-green"></span> Online';
+                    } else {
+                        overallStatus.innerHTML = '<span class="indicator-dot dot-orange"></span> Degraded';
+                    }
+                    
+                    ollamaStatus.innerHTML = data.components.ollama === 'up'
+                        ? '<span style="color: var(--success); font-weight: 600;">Active</span>'
+                        : '<span style="color: var(--danger); font-weight: 600;">Offline</span>';
+                        
+                    vectorStatus.innerHTML = data.components.vector_store_files === 'up'
+                        ? '<span style="color: var(--success); font-weight: 600;">Loaded</span>'
+                        : '<span style="color: var(--danger); font-weight: 600;">Missing</span>';
+                } else {
+                    overallStatus.innerHTML = '<span class="indicator-dot dot-red"></span> Server Error';
+                }
+            } catch (err) {
+                const overallStatus = document.getElementById('overall-status');
+                overallStatus.innerHTML = '<span class="indicator-dot dot-red"></span> Disconnected';
+                console.error("Failed to poll health:", err);
+            }
+        }
+
+        function formatUptime(seconds) {
+            if (seconds < 60) return Math.round(seconds) + 's';
+            const minutes = Math.floor(seconds / 60);
+            if (minutes < 60) return minutes + 'm';
+            const hours = Math.floor(minutes / 60);
+            return hours + 'h ' + (minutes % 60) + 'm';
+        }
+
+        // Submit query to FastAPI /query
+        async function submitQuery(event) {
+            event.preventDefault();
+            const query = queryInput.value.trim();
+            if (!query) return;
+
+            // Remove empty state on first message
+            if (emptyState) {
+                emptyState.style.display = 'none';
+            }
+
+            // Append User message
+            appendMessage('user', query);
+            queryInput.value = '';
+            
+            // Set sending states
+            queryInput.disabled = true;
+            sendBtn.disabled = true;
+
+            // Append loading indicator
+            const loadingBubbleId = appendLoadingBubble();
+            
+            try {
+                const response = await fetch('/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: query })
+                });
+
+                removeLoadingBubble(loadingBubbleId);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    appendMessage('assistant', data.answer, data.status);
+                } else {
+                    const errData = await response.json();
+                    const errorMsg = errData.detail || "An unexpected server error occurred.";
+                    appendMessage('assistant', `⚠️ **Error ${response.status}**: ${errorMsg}`);
+                }
+            } catch (err) {
+                removeLoadingBubble(loadingBubbleId);
+                appendMessage('assistant', `❌ **Network Connection Error**: Failed to contact backend API server.`);
+            } finally {
+                queryInput.disabled = false;
+                sendBtn.disabled = false;
+                queryInput.focus();
+                pollMetrics(); // Refresh metrics after a query
+            }
+        }
+
+        function appendMessage(sender, text, status = null) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = 'avatar';
+            avatarDiv.innerText = sender === 'user' ? 'U' : 'AI';
+
+            const contentDiv = document.createElement('div');
+            contentDiv.style.display = 'flex';
+            contentDiv.style.flexDirection = 'column';
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'bubble';
+            
+            // Basic markdown or newline formatting conversion
+            bubbleDiv.innerHTML = formatText(text);
+
+            contentDiv.appendChild(bubbleDiv);
+
+            if (status) {
+                const badge = document.createElement('span');
+                badge.className = `status-badge ${status.toLowerCase().includes('pass') ? 'pass' : 'failed'}`;
+                badge.innerText = `Evaluation: ${status.replace(/_/g, ' ')}`;
+                contentDiv.appendChild(badge);
+            }
+
+            messageDiv.appendChild(avatarDiv);
+            messageDiv.appendChild(contentDiv);
+            messagesContainer.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function appendLoadingBubble() {
+            const id = 'loading-' + Date.now();
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message assistant';
+            messageDiv.id = id;
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = 'avatar';
+            avatarDiv.innerText = 'AI';
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'bubble';
+            
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.innerHTML = '<span></span><span></span><span></span><span style="font-size: 12px; margin-left: 8px; color: var(--text-muted); animation: none; width: auto; height: auto;">Running Self-Correcting RAG loop...</span>';
+
+            bubbleDiv.appendChild(typingDiv);
+            messageDiv.appendChild(avatarDiv);
+            messageDiv.appendChild(bubbleDiv);
+            messagesContainer.appendChild(messageDiv);
+            scrollToBottom();
+            return id;
+        }
+
+        function removeLoadingBubble(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function formatText(text) {
+            // Replace double newlines with paragraph tags or line breaks
+            let formatted = text.replace(/\n/g, '<br>');
+            
+            // Bold parser (e.g. **text**)
+            formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            return formatted;
+        }
+
+        function scrollToBottom() {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // PDF Upload implementation
+        let selectedFile = null;
+
+        function handleFileSelect(input) {
+            const fileNameDiv = document.getElementById('selected-file-name');
+            const uploadBtn = document.getElementById('upload-btn');
+            
+            if (input.files && input.files.length > 0) {
+                selectedFile = input.files[0];
+                fileNameDiv.textContent = selectedFile.name;
+                fileNameDiv.style.color = 'var(--text-main)';
+                
+                uploadBtn.disabled = false;
+                uploadBtn.style.cursor = 'pointer';
+                uploadBtn.style.background = 'var(--primary)';
+                uploadBtn.style.color = 'var(--text-main)';
+            } else {
+                selectedFile = null;
+                fileNameDiv.textContent = 'No file chosen';
+                fileNameDiv.style.color = 'var(--text-muted)';
+                
+                uploadBtn.disabled = true;
+                uploadBtn.style.cursor = 'not-allowed';
+                uploadBtn.style.background = 'var(--bg-card)';
+                uploadBtn.style.color = 'var(--text-muted)';
+            }
+        }
+
+        async function uploadSelectedPDF() {
+            if (!selectedFile) return;
+            
+            const uploadBtn = document.getElementById('upload-btn');
+            const statusText = document.getElementById('upload-status-text');
+            const fileInput = document.getElementById('pdf-input');
+            
+            // Set loading state
+            uploadBtn.disabled = true;
+            uploadBtn.style.cursor = 'wait';
+            uploadBtn.innerHTML = 'Processing...';
+            statusText.style.color = 'var(--warning)';
+            statusText.textContent = 'Uploading and chunking...';
+            
+            const formData = new FormData();
+            formData.append('pdf', selectedFile);
+            
+            try {
+                const response = await fetch('/upload-pdf', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    statusText.style.color = 'var(--success)';
+                    statusText.textContent = 'Ingested successfully!';
+                    
+                    // Show a message in the chat area
+                    appendMessage('assistant', `✅ **Document Uploaded**: PDF "${selectedFile.name}" has been successfully parsed and ingested into the knowledge base. You can now query the new information.`, 'PASS');
+                    
+                    // Reset input
+                    fileInput.value = '';
+                    handleFileSelect(fileInput);
+                } else {
+                    const errorData = await response.json();
+                    const errMsg = errorData.detail || 'Upload failed.';
+                    statusText.style.color = 'var(--danger)';
+                    statusText.textContent = 'Failed to upload.';
+                    appendMessage('assistant', `❌ **Failed to upload PDF**: ${errMsg}`);
+                }
+            } catch (err) {
+                console.error("PDF upload error:", err);
+                statusText.style.color = 'var(--danger)';
+                statusText.textContent = 'Network error.';
+                appendMessage('assistant', `❌ **Network Connection Error**: Failed to upload PDF to server.`);
+            } finally {
+                uploadBtn.innerHTML = 'Upload and Ingest';
+                if (statusText.textContent === 'Ingested successfully!') {
+                    setTimeout(() => { statusText.textContent = ''; }, 5000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

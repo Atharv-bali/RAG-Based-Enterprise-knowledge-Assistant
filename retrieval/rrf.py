@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 def rrf_fusion(
     dense_results,
     bm25_results,
@@ -52,5 +51,4 @@ def rrf_fusion(
             }
         )
 
-        return final_results
-    
+    return final_results

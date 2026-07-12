@@ -2,13 +2,14 @@ from retrieval.hybrid_retrieval import (
     hybrid_search
 )
 
-from generator_agent import (
+from agents.generator_agent import (
     generate_answer
 )
 
-from evaluator_agent import (
+from agents.evaluator_agent import (
     evaluate_answer
 )
+
 
 MAX_RETRIES = 3
 
@@ -79,25 +80,9 @@ def ask(question):
         "answer": answer
     }
 
+def query(question: str):
+    return ask(question)
+
 if __name__ == "__main__":
-
-    question = (
-        "What was Q3 revenue growth?"
-    )
-
-    result = ask(
-        question
-    )
-
-    print("\n")
-    print("=" * 80)
-
-    print(
-        result["status"]
-    )
-
-    print("\n")
-
-    print(
-        result["answer"]
-    )
+    question = input("Question: ")
+    print(query(question))

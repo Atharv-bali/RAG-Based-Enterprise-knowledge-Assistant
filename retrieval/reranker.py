@@ -6,7 +6,6 @@ reranker = CrossEncoder(
     "BAAI/bge-reranker-base"
 )
 
-
 def rerank(query, retrieved_chunks, top_k=5):
 
     pairs = []

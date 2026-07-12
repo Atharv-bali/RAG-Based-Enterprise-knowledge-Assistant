@@ -1,10 +1,10 @@
-from dense_retrieval import dense_search
-from bm25_retrieval import bm25_search
+from retrieval.dense_retrieval import dense_search
+from retrieval.bm25_retrieval import bm25_search
 
-from rrf import rrf_fusion
+from retrieval.rrf import rrf_fusion
 
-from reranker import rerank
-from context_builder import build_context
+from retrieval.reranker import rerank
+from retrieval.context_builder import build_context
 
 TOP_K_DENSE = 20
 TOP_K_BM25 = 20
@@ -33,7 +33,7 @@ def hybrid_search(
     top_chunks = rerank(
         query,
         hybrid_results,
-        top_k=5
+        top_k=10
     )
 
     context = build_context(
