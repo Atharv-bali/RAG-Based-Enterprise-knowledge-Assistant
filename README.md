@@ -11,4 +11,3 @@ The aim of this project is to create a system where users can upload documents a
 2. The system can support more file types such as Word documents, PowerPoint presentations, images, and scanned PDFs so that users can ask questions from different kinds of files.
 
 3. The system can be improved to handle multiple documents at the same time and provide better answers by combining information from different documents.
->>>>>>> 77c6d84633b6d8d436013ee36a49d21ba840c336
