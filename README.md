@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Enterprise Knowledge Assistant - Code Architecture
 
 This repository contains an Advanced Enterprise Knowledge Assistant built using a multi-agent, self-correcting Retrieval-Augmented Generation (RAG) system. The application is powered by a **FastAPI** backend and a custom HTML5 dark-themed frontend dashboard.
@@ -88,3 +89,18 @@ The `frontend/` folder contains the dark-themed user dashboard.
         *   **Sidebar**: Houses Ollama/Vector health checks, real-time performance indicators (queries processed, average processing latency, success rate), and a PDF Upload area.
         *   **Main Chat Area**: Interactive interface with animated typing states for agent execution loops and structured chat message bubbles rendering quality evaluation check tags (`PASS` / `FAILED`).
     *   **Under the Hood**: Uses asynchronous browser `fetch` calls to communicate with the FastAPI server endpoints `/query`, `/upload-pdf`, `/health`, and `/metrics`.
+=======
+## Objective
+The aim of this project is to create a system where users can upload documents and ask questions about them. The system provides relevant answers without requiring users to read the complete PDF files. It also tries to reduce hallucinations by generating answers only from the uploaded documents and verifying the response before showing it to the user.
+
+## Architecture
+<img width="997" height="716" alt="image" src="https://github.com/user-attachments/assets/2ae1c81d-45ad-4def-9f50-8252a1fb6327" />
+
+## Future Works
+
+1. Instead of doing chunking every time, the system can save the chunks and embeddings after the document is uploaded. The chunks will remain stored until the user deletes the document, making retrieval faster.
+
+2. The system can support more file types such as Word documents, PowerPoint presentations, images, and scanned PDFs so that users can ask questions from different kinds of files.
+
+3. The system can be improved to handle multiple documents at the same time and provide better answers by combining information from different documents.
+>>>>>>> 77c6d84633b6d8d436013ee36a49d21ba840c336

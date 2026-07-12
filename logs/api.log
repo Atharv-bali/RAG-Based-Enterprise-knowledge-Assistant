@@ -1,0 +1,554 @@
+[2026-07-11 13:24:37] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:24:37] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0092s
+[2026-07-11 13:24:50] INFO in logger (Line 47): Incoming Request: GET /docs from 127.0.0.1
+[2026-07-11 13:24:50] INFO in logger (Line 55): Completed Request: GET /docs - Status: 200 - Latency: 0.0110s
+[2026-07-11 13:24:50] INFO in logger (Line 47): Incoming Request: GET /openapi.json from 127.0.0.1
+[2026-07-11 13:24:51] INFO in logger (Line 55): Completed Request: GET /openapi.json - Status: 200 - Latency: 0.0746s
+[2026-07-11 13:47:33] INFO in logger (Line 47): Incoming Request: GET / from 127.0.0.1
+[2026-07-11 13:47:33] INFO in logger (Line 55): Completed Request: GET / - Status: 200 - Latency: 0.0071s
+[2026-07-11 13:47:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-11 13:47:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:47:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0039s
+[2026-07-11 13:47:38] WARNING in routes (Line 29): Health check failed to contact Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPConnection(host='localhost', port=11434) at 0x2beb9a797f0>, 'Connection to localhost timed out. (connect timeout=2)'))
+[2026-07-11 13:47:38] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 4.0369s
+[2026-07-11 13:47:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:47:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0017s
+[2026-07-11 13:47:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-11 13:47:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:47:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0035s
+[2026-07-11 13:47:48] WARNING in routes (Line 29): Health check failed to contact Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPConnection(host='localhost', port=11434) at 0x2beb9a82fd0>, 'Connection to localhost timed out. (connect timeout=2)'))
+[2026-07-11 13:47:48] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 4.0319s
+[2026-07-11 13:47:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:47:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-11 13:47:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-11 13:47:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:47:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0026s
+[2026-07-11 13:47:57] INFO in logger (Line 47): Incoming Request: POST /query from 127.0.0.1
+[2026-07-11 13:47:57] INFO in rag_service (Line 10): RAG Service processing question: 'Artificial Intelligence is transforming enterprises.'
+[2026-07-11 13:47:58] WARNING in routes (Line 29): Health check failed to contact Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPConnection(host='localhost', port=11434) at 0x2beb9a82e90>, 'Connection to localhost timed out. (connect timeout=2)'))
+[2026-07-11 13:47:58] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 4.0213s
+[2026-07-11 13:47:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:47:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-11 13:48:03] ERROR in rag_service (Line 16): Error in LLM/Ollama communication: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+[2026-07-11 13:48:03] WARNING in exceptions (Line 24): RAG Application Exception on /query: Failed to communicate with Ollama/LLM service
+[2026-07-11 13:48:03] INFO in logger (Line 55): Completed Request: POST /query - Status: 500 - Latency: 6.1782s
+[2026-07-11 13:48:03] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:48:03] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0036s
+[2026-07-11 13:48:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-11 13:48:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:48:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0028s
+[2026-07-11 13:48:08] WARNING in routes (Line 29): Health check failed to contact Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPConnection(host='localhost', port=11434) at 0x2beb4f3a060>, 'Connection to localhost timed out. (connect timeout=2)'))
+[2026-07-11 13:48:08] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 4.0133s
+[2026-07-11 13:48:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:48:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-11 13:48:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-11 13:48:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-11 13:48:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0031s
+[2026-07-11 13:48:18] WARNING in routes (Line 29): Health check failed to contact Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPConnection(host='localhost', port=11434) at 0x2beb9a63530>, 'Connection to localhost timed out. (connect timeout=2)'))
+[2026-07-11 13:48:18] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 4.0288s
+[2026-07-12 12:16:13] INFO in logger (Line 47): Incoming Request: GET / from 127.0.0.1
+[2026-07-12 12:16:13] INFO in logger (Line 55): Completed Request: GET / - Status: 200 - Latency: 0.0057s
+[2026-07-12 12:16:13] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:16:13] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:13] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0052s
+[2026-07-12 12:16:13] INFO in logger (Line 47): Incoming Request: GET /favicon.ico from 127.0.0.1
+[2026-07-12 12:16:13] INFO in logger (Line 55): Completed Request: GET /favicon.ico - Status: 404 - Latency: 0.0031s
+[2026-07-12 12:16:15] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0473s
+[2026-07-12 12:16:18] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:18] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0014s
+[2026-07-12 12:16:23] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:16:23] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:23] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0049s
+[2026-07-12 12:16:25] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0162s
+[2026-07-12 12:16:28] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:28] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0014s
+[2026-07-12 12:16:28] INFO in logger (Line 47): Incoming Request: POST /upload-pdf from 127.0.0.1
+[2026-07-12 12:16:28] INFO in logger (Line 55): Completed Request: POST /upload-pdf - Status: 200 - Latency: 0.0764s
+[2026-07-12 12:16:33] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:16:33] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:33] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:16:35] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0102s
+[2026-07-12 12:16:36] INFO in logger (Line 47): Incoming Request: POST /query from 127.0.0.1
+[2026-07-12 12:16:36] INFO in rag_service (Line 10): RAG Service processing question: 'now tell me name of candidate'
+[2026-07-12 12:16:38] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:38] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0027s
+[2026-07-12 12:16:43] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:16:43] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:43] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0031s
+[2026-07-12 12:16:45] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0297s
+[2026-07-12 12:16:48] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:48] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:16:53] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:16:53] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:53] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0037s
+[2026-07-12 12:16:55] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0255s
+[2026-07-12 12:16:58] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:16:58] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0101s
+[2026-07-12 12:17:03] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:17:03] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:03] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0035s
+[2026-07-12 12:17:05] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0162s
+[2026-07-12 12:17:08] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:08] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0023s
+[2026-07-12 12:17:13] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:17:13] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:13] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0043s
+[2026-07-12 12:17:15] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0290s
+[2026-07-12 12:17:18] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:18] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0023s
+[2026-07-12 12:17:23] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:17:23] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:23] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0046s
+[2026-07-12 12:17:25] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0131s
+[2026-07-12 12:17:28] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:28] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:17:33] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:17:33] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:33] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0086s
+[2026-07-12 12:17:35] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0396s
+[2026-07-12 12:17:38] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:38] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:17:43] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:43] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:17:43] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0037s
+[2026-07-12 12:17:45] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0291s
+[2026-07-12 12:17:48] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:48] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:17:53] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:17:53] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:53] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0040s
+[2026-07-12 12:17:55] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0177s
+[2026-07-12 12:17:58] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:17:58] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0027s
+[2026-07-12 12:18:03] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:18:03] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:03] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0048s
+[2026-07-12 12:18:05] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0191s
+[2026-07-12 12:18:08] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:08] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:18:13] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:18:13] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:13] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0036s
+[2026-07-12 12:18:15] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0144s
+[2026-07-12 12:18:18] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:18] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0038s
+[2026-07-12 12:18:23] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:18:23] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:23] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0037s
+[2026-07-12 12:18:25] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0400s
+[2026-07-12 12:18:28] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:28] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0045s
+[2026-07-12 12:18:33] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:18:33] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:33] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0053s
+[2026-07-12 12:18:35] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0138s
+[2026-07-12 12:18:38] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:38] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:18:43] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:18:43] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:43] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:18:45] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0127s
+[2026-07-12 12:18:48] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:48] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0026s
+[2026-07-12 12:18:53] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:18:53] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:53] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0052s
+[2026-07-12 12:18:55] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0304s
+[2026-07-12 12:18:58] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:18:58] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0032s
+[2026-07-12 12:19:03] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:19:03] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:03] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0031s
+[2026-07-12 12:19:05] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0202s
+[2026-07-12 12:19:08] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:08] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:19:13] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:19:13] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:13] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0060s
+[2026-07-12 12:19:15] INFO in rag_service (Line 13): RAG Service completed processing with status: FAILED_AFTER_RETRIES
+[2026-07-12 12:19:15] INFO in logger (Line 55): Completed Request: POST /query - Status: 200 - Latency: 159.3377s
+[2026-07-12 12:19:15] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:15] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:19:15] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0140s
+[2026-07-12 12:19:18] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:18] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0014s
+[2026-07-12 12:19:23] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:23] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:19:23] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0030s
+[2026-07-12 12:19:25] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0362s
+[2026-07-12 12:19:28] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:28] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:19:33] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:19:33] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:33] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0042s
+[2026-07-12 12:19:35] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0202s
+[2026-07-12 12:19:38] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:38] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0013s
+[2026-07-12 12:19:43] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:19:43] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:43] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:19:45] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0127s
+[2026-07-12 12:19:48] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:48] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:19:53] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:19:53] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:53] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0030s
+[2026-07-12 12:19:55] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0080s
+[2026-07-12 12:19:58] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:19:58] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0017s
+[2026-07-12 12:20:03] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:20:03] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:03] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0031s
+[2026-07-12 12:20:05] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0310s
+[2026-07-12 12:20:08] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:08] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:20:13] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:13] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:20:13] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0029s
+[2026-07-12 12:20:15] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0297s
+[2026-07-12 12:20:18] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:18] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:20:23] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:20:23] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:23] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0027s
+[2026-07-12 12:20:25] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0196s
+[2026-07-12 12:20:28] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:28] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:20:33] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:20:33] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:33] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0014s
+[2026-07-12 12:20:35] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0253s
+[2026-07-12 12:20:38] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:38] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:20:43] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:20:43] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:43] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:20:45] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0275s
+[2026-07-12 12:20:48] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:48] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0014s
+[2026-07-12 12:20:53] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:20:53] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:53] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:20:55] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0143s
+[2026-07-12 12:20:58] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:20:58] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:21:03] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:21:03] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:21:03] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:21:05] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0345s
+[2026-07-12 12:21:08] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:21:08] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0011s
+[2026-07-12 12:21:13] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:21:13] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:21:13] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0035s
+[2026-07-12 12:21:15] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0120s
+[2026-07-12 12:21:18] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:21:18] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0013s
+[2026-07-12 12:21:23] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:21:23] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:21:23] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:21:25] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0261s
+[2026-07-12 12:21:28] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:21:28] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:28:54] INFO in logger (Line 47): Incoming Request: GET / from 127.0.0.1
+[2026-07-12 12:28:54] INFO in logger (Line 55): Completed Request: GET / - Status: 200 - Latency: 0.0065s
+[2026-07-12 12:28:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:28:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:28:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0159s
+[2026-07-12 12:28:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0543s
+[2026-07-12 12:28:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:28:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0017s
+[2026-07-12 12:29:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:29:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:29:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0176s
+[2026-07-12 12:29:08] INFO in logger (Line 47): Incoming Request: POST /upload-pdf from 127.0.0.1
+[2026-07-12 12:29:08] INFO in logger (Line 55): Completed Request: POST /upload-pdf - Status: 200 - Latency: 0.0803s
+[2026-07-12 12:29:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:29:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:29:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:29:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0221s
+[2026-07-12 12:29:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0023s
+[2026-07-12 12:29:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:29:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:29:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0185s
+[2026-07-12 12:29:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:29:30] INFO in logger (Line 47): Incoming Request: POST /query from 127.0.0.1
+[2026-07-12 12:29:30] INFO in rag_service (Line 10): RAG Service processing question: 'tell me name of candidate and father name, along with name of college ?'
+[2026-07-12 12:29:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:29:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0044s
+[2026-07-12 12:29:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0252s
+[2026-07-12 12:29:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0030s
+[2026-07-12 12:29:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:29:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0035s
+[2026-07-12 12:29:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0293s
+[2026-07-12 12:29:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:29:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:29:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:29:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0353s
+[2026-07-12 12:29:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:29:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:30:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:30:05] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:05] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0039s
+[2026-07-12 12:30:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0116s
+[2026-07-12 12:30:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:30:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:30:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0033s
+[2026-07-12 12:30:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0230s
+[2026-07-12 12:30:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0052s
+[2026-07-12 12:30:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:30:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0051s
+[2026-07-12 12:30:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0234s
+[2026-07-12 12:30:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:30:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:30:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0042s
+[2026-07-12 12:30:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0251s
+[2026-07-12 12:30:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:30:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:30:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0039s
+[2026-07-12 12:30:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0316s
+[2026-07-12 12:30:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0027s
+[2026-07-12 12:30:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:30:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0027s
+[2026-07-12 12:30:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0213s
+[2026-07-12 12:30:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:30:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:31:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:31:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0032s
+[2026-07-12 12:31:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0217s
+[2026-07-12 12:31:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0023s
+[2026-07-12 12:31:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:31:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0044s
+[2026-07-12 12:31:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0174s
+[2026-07-12 12:31:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0028s
+[2026-07-12 12:31:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:31:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0063s
+[2026-07-12 12:31:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0319s
+[2026-07-12 12:31:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0038s
+[2026-07-12 12:31:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:31:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0084s
+[2026-07-12 12:31:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0243s
+[2026-07-12 12:31:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0029s
+[2026-07-12 12:31:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:31:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0044s
+[2026-07-12 12:31:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0173s
+[2026-07-12 12:31:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:31:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:31:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0072s
+[2026-07-12 12:31:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0423s
+[2026-07-12 12:31:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:31:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:32:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:32:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0050s
+[2026-07-12 12:32:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0162s
+[2026-07-12 12:32:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:32:14] INFO in rag_service (Line 13): RAG Service completed processing with status: FAILED_AFTER_RETRIES
+[2026-07-12 12:32:14] INFO in logger (Line 55): Completed Request: POST /query - Status: 200 - Latency: 163.9417s
+[2026-07-12 12:32:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:32:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:32:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0039s
+[2026-07-12 12:32:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0294s
+[2026-07-12 12:32:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0025s
+[2026-07-12 12:32:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:32:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:32:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0248s
+[2026-07-12 12:32:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0028s
+[2026-07-12 12:32:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:32:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:32:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0236s
+[2026-07-12 12:32:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:32:42] INFO in logger (Line 47): Incoming Request: POST /query from 127.0.0.1
+[2026-07-12 12:32:42] INFO in rag_service (Line 10): RAG Service processing question: 'Phone number of Atharv Bali ?'
+[2026-07-12 12:32:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:32:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0049s
+[2026-07-12 12:32:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0121s
+[2026-07-12 12:32:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0032s
+[2026-07-12 12:32:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:32:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0138s
+[2026-07-12 12:32:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0316s
+[2026-07-12 12:32:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:32:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0020s
+[2026-07-12 12:33:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:33:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:33:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0239s
+[2026-07-12 12:33:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0030s
+[2026-07-12 12:33:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:33:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0023s
+[2026-07-12 12:33:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0151s
+[2026-07-12 12:33:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:33:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:33:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0065s
+[2026-07-12 12:33:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0236s
+[2026-07-12 12:33:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0034s
+[2026-07-12 12:33:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:33:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0046s
+[2026-07-12 12:33:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0236s
+[2026-07-12 12:33:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0040s
+[2026-07-12 12:33:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:33:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0044s
+[2026-07-12 12:33:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0392s
+[2026-07-12 12:33:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:33:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:33:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0029s
+[2026-07-12 12:33:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0146s
+[2026-07-12 12:33:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:33:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0025s
+[2026-07-12 12:34:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:34:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0036s
+[2026-07-12 12:34:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0391s
+[2026-07-12 12:34:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0028s
+[2026-07-12 12:34:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:34:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:34:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0264s
+[2026-07-12 12:34:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0033s
+[2026-07-12 12:34:22] INFO in rag_service (Line 13): RAG Service completed processing with status: FAILED_AFTER_RETRIES
+[2026-07-12 12:34:22] INFO in logger (Line 55): Completed Request: POST /query - Status: 200 - Latency: 100.6863s
+[2026-07-12 12:34:22] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:22] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0079s
+[2026-07-12 12:34:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:34:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:34:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0294s
+[2026-07-12 12:34:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:34:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:34:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0039s
+[2026-07-12 12:34:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0246s
+[2026-07-12 12:34:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:34:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:34:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:34:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0296s
+[2026-07-12 12:34:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0029s
+[2026-07-12 12:34:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:34:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0036s
+[2026-07-12 12:34:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0311s
+[2026-07-12 12:34:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:34:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0013s
+[2026-07-12 12:35:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:35:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0022s
+[2026-07-12 12:35:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0319s
+[2026-07-12 12:35:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0017s
+[2026-07-12 12:35:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:35:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0054s
+[2026-07-12 12:35:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0275s
+[2026-07-12 12:35:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0018s
+[2026-07-12 12:35:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:35:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:35:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0372s
+[2026-07-12 12:35:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0023s
+[2026-07-12 12:35:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:35:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:35:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0258s
+[2026-07-12 12:35:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:35:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:35:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0038s
+[2026-07-12 12:35:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0342s
+[2026-07-12 12:35:49] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:49] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0016s
+[2026-07-12 12:35:54] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:35:54] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:54] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0021s
+[2026-07-12 12:35:56] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0207s
+[2026-07-12 12:35:59] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:35:59] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:36:04] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:36:04] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:04] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0027s
+[2026-07-12 12:36:06] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0231s
+[2026-07-12 12:36:09] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:09] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0019s
+[2026-07-12 12:36:14] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:36:14] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:14] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0038s
+[2026-07-12 12:36:16] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0242s
+[2026-07-12 12:36:19] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:19] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:36:24] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:36:24] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:24] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0024s
+[2026-07-12 12:36:26] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0338s
+[2026-07-12 12:36:29] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:29] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0015s
+[2026-07-12 12:36:34] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:36:34] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:34] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0038s
+[2026-07-12 12:36:36] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0292s
+[2026-07-12 12:36:39] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:39] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0012s
+[2026-07-12 12:36:44] INFO in logger (Line 47): Incoming Request: GET /health from 127.0.0.1
+[2026-07-12 12:36:44] INFO in logger (Line 47): Incoming Request: GET /metrics from 127.0.0.1
+[2026-07-12 12:36:44] INFO in logger (Line 55): Completed Request: GET /metrics - Status: 200 - Latency: 0.0028s
+[2026-07-12 12:36:46] INFO in logger (Line 55): Completed Request: GET /health - Status: 200 - Latency: 2.0169s
